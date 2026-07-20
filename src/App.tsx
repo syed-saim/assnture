@@ -7,6 +7,7 @@ import { PlatformShowcase } from './components/PlatformShowcase'
 import { SolutionsSection } from './components/SolutionsSection'
 import { ListingsSection } from './components/ListingsSection'
 import { StatsSection } from './components/StatsSection'
+import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
 import './index.css'
 
@@ -24,6 +25,7 @@ function App() {
         <SolutionsSection />
         <ListingsSection />
         <StatsSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>

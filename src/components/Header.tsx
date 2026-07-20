@@ -19,7 +19,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
   return (
     <header className="relative z-20 w-full">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-6 py-4 lg:py-5">
+        <div className="flex flex-wrap items-center justify-between gap-6 py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:py-5">
           <div className="flex w-full items-center justify-between gap-8 lg:w-auto">
             <a href="/" className="flex items-center gap-3">
               <img
@@ -27,9 +27,6 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
                 alt="ASSNTURE"
                 className="h-8 w-auto"
               />
-              <span className="hidden text-xs font-medium tracking-widest text-gray-500 uppercase sm:inline dark:text-neutral-400">
-                Capital
-              </span>
             </a>
 
             <button
@@ -62,23 +59,24 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
               </svg>
             </button>
 
-            <nav className="hidden lg:block">
-              <ul className="flex gap-8 text-sm">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="text-gray-700/80 transition-colors duration-150 hover:text-gray-900 dark:text-neutral-300/80 dark:hover:text-neutral-100"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <nav className="hidden lg:block">
+            <ul className="flex gap-8 text-sm">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-gray-700/80 transition-colors duration-150 hover:text-gray-900 dark:text-neutral-300/80 dark:hover:text-neutral-100"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="hidden items-center gap-3 lg:flex lg:justify-self-end">
             <button
               type="button"
               onClick={onToggleTheme}

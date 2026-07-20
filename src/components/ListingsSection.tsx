@@ -168,7 +168,7 @@ export function ListingsSection() {
         <p className="mt-8 max-w-3xl text-sm leading-relaxed text-gray-600 dark:text-neutral-400">
           Opportunities shown are illustrative summaries for information
           purposes only. They do not constitute an offer, solicitation, or
-          investment advice. ASSNTURE Capital is in the process of obtaining its
+          investment advice. ASSNTURE is in the process of obtaining its
           Financial Services Permission from the FSRA and is not yet licensed
           to provide regulated financial services.
         </p>
