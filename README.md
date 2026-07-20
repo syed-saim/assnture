@@ -1,12 +1,18 @@
-# ASSNTURE — Capital Market Listings
+# ASSNTURE — Website Revamp
 
-Desktop implementation of the **Capital Market Listings — Refined** page for the ASSNTURE website revamp.
+Modern landing page for ASSNTURE Capital, inspired by a clean fintech aesthetic with soft gradient backgrounds, glass-card UI, and dark/light mode.
 
-Built with Vite, React, and TypeScript, using ASSNTURE Capital's brand system (Barlow Condensed, JetBrains Mono, EB Garamond, orange accent `#F07030`).
+Built with **Vite**, **React**, **TypeScript**, and **Tailwind CSS v4**.
 
-## Design source
+## Sections
 
-[Figma — Assnture Website Revamp — Capital Market Listings](https://www.figma.com/design/FAJVSjqhC3IJPrM1V4lY79/Assnture-Website-Revamp-%E2%80%94-Capital-Market-Listings?node-id=0-1)
+- **Hero** — split layout with platform dashboard, floating stat cards, and CTAs
+- **Partners** — scrolling marquee of infrastructure partners
+- **Platform showcase** — 3D-tilted dashboard preview with feature grid
+- **Solutions** — three product capability cards
+- **Capital Market Listings** — filterable TBLOCS opportunity cards
+- **Stats** — institutional scale metrics
+- **Footer** — contact and regulatory disclaimer
 
 ## Run locally
 
@@ -15,14 +21,19 @@ npm install
 npm run dev
 ```
 
-## Scripts
+Open [http://localhost:5173](http://localhost:5173).
 
-| Command        | Description              |
-| -------------- | ------------------------ |
-| `npm run dev`  | Start development server |
-| `npm run build`| Production build         |
-| `npm run preview` | Preview production build |
+## Build
 
-## Notes
+```bash
+npm run build
+npm run preview
+```
 
-Listings data is illustrative and mirrors TBLOCS opportunity summaries from [assnture.capital](https://assnture.capital/). ASSNTURE Capital is not yet licensed to provide regulated financial services.
+## Design inspiration
+
+Layout and visual language adapted from the Nebula fintech template (soft blurs, rounded cards, pill badges, marquee logos) with ASSNTURE brand colors and capital markets content.
+
+## Note
+
+Listings and regulatory status are illustrative. ASSNTURE Capital is not yet licensed to provide regulated financial services.
