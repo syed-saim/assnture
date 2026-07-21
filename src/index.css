@@ -15,6 +15,7 @@ html {
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 @keyframes scroll-left {
@@ -40,4 +41,91 @@ body {
 
 .rotate-x-6 {
   transform: rotateX(6deg) skewY(-2deg);
+}
+
+/* Resource page surfaces are explicit so theme and layout remain stable
+   when this route is loaded directly or from a cached Vite session. */
+.resources-infographic,
+.resources-blog {
+  border-color: rgb(228 228 231 / 0.8);
+  background: rgb(255 255 255 / 0.62);
+}
+
+.resource-step-card,
+.resource-video-card,
+.resource-article {
+  border-color: rgb(228 228 231 / 0.9);
+  background: rgb(255 255 255 / 0.94);
+}
+
+.resource-benefits {
+  border-color: rgb(228 228 231 / 0.9);
+  background: rgb(228 228 231 / 0.9);
+}
+
+.resource-benefit {
+  background: rgb(255 255 255 / 0.96);
+}
+
+.resources-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  background: #171717;
+}
+
+.resources-cta-button {
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+  background: #fff;
+}
+
+.resources-cta-button:hover {
+  background: #f5f5f5;
+}
+
+.dark .resources-infographic,
+.dark .resources-blog {
+  border-color: rgb(255 255 255 / 0.1);
+  background: rgb(255 255 255 / 0.025);
+}
+
+.dark .resource-step-card,
+.dark .resource-video-card,
+.dark .resource-article {
+  border-color: rgb(255 255 255 / 0.12);
+  background: #171717;
+}
+
+.dark .resource-benefits {
+  border-color: rgb(255 255 255 / 0.1);
+  background: rgb(255 255 255 / 0.1);
+}
+
+.dark .resource-benefit {
+  background: #0a0a0a;
+}
+
+.dark .resources-cta {
+  background: #f07030;
+}
+
+@media (max-width: 767px) {
+  .rotate-x-6 {
+    transform: none;
+  }
+
+  .resources-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .resources-cta-button {
+    white-space: normal;
+  }
+
+  .resource-steps {
+    grid-template-columns: 1fr;
+  }
 }

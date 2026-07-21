@@ -4,7 +4,7 @@ const inputClassName =
 export function ContactSection() {
   return (
     <section id="contact" className="relative z-10 scroll-mt-8 py-16 sm:py-20 lg:py-28 dark:bg-neutral-950">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/75 shadow-xl shadow-zinc-950/5 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.035] dark:shadow-black/20">
           <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
             <div className="flex flex-col justify-between border-b border-zinc-200/80 p-7 sm:p-10 lg:border-r lg:border-b-0 lg:p-12 dark:border-white/10">
@@ -12,7 +12,7 @@ export function ContactSection() {
                 <p className="mb-4 text-sm font-semibold tracking-widest text-assnture uppercase">
                   Get in touch
                 </p>
-                <h2 className="max-w-md text-4xl leading-tight font-medium text-gray-900 sm:text-5xl dark:text-neutral-100">
+                <h2 className="max-w-md text-3xl leading-tight font-medium text-gray-900 sm:text-5xl dark:text-neutral-100">
                   Let’s discuss what you’re building.
                 </h2>
                 <p className="mt-6 max-w-md leading-relaxed text-gray-600 dark:text-neutral-400">

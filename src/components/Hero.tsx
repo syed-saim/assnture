@@ -8,8 +8,8 @@ const heroDark =
 
 export function Hero() {
   return (
-    <section className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8">
-      <div className="grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
+    <section className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="grid items-center gap-12 py-12 sm:py-16 lg:grid-cols-2 lg:py-24">
         <div className="space-y-8">
           <motion.div
             className="space-y-6"
@@ -23,7 +23,7 @@ export function Hero() {
                 Regulated Capital Markets
               </span>
             </div>
-            <h1 className="text-4xl leading-tight font-medium text-gray-900 lg:text-6xl dark:text-neutral-100">
+            <h1 className="text-4xl leading-[1.08] font-medium text-gray-900 sm:text-5xl lg:text-6xl dark:text-neutral-100">
               Bringing Capital Markets On-Chain
             </h1>
             <p className="max-w-lg text-lg text-gray-700/80 dark:text-neutral-300/80">
@@ -35,7 +35,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            className="flex flex-col gap-4 sm:flex-row"
+            className="flex flex-col gap-3 sm:flex-row sm:gap-4"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.15 }}
@@ -55,14 +55,14 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            className="flex items-center gap-8 pt-4"
+            className="grid grid-cols-3 gap-3 pt-4 sm:flex sm:items-center sm:gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {heroStats.map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl font-semibold text-gray-900 dark:text-neutral-100">
+                <div className="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-neutral-100">
                   {stat.value}
                 </div>
                 <div className="text-sm text-gray-700/80 dark:text-neutral-300/80">
@@ -92,7 +92,7 @@ export function Hero() {
               className="hidden w-full rounded-2xl border border-white/15 shadow-2xl dark:block"
             />
           </div>
-          <div className="absolute -bottom-4 -left-4 rounded-lg border border-zinc-300/70 bg-white p-4 shadow-lg dark:border-white/20 dark:bg-neutral-900">
+          <div className="absolute -bottom-5 left-2 rounded-lg border border-zinc-300/70 bg-white p-3 shadow-lg sm:-left-4 sm:p-4 dark:border-white/20 dark:bg-neutral-900">
             <div className="flex items-center gap-3">
               <div className="h-8 w-8 rounded-full bg-gradient-to-r from-orange-400 to-amber-500" />
               <div>
@@ -105,7 +105,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="absolute -top-4 -right-4 rounded-lg border border-zinc-300/70 bg-white p-4 shadow-lg dark:border-white/20 dark:bg-neutral-900">
+          <div className="absolute -top-4 right-2 rounded-lg border border-zinc-300/70 bg-white p-3 shadow-lg sm:-right-4 sm:p-4 dark:border-white/20 dark:bg-neutral-900">
             <div className="mb-1 text-xs text-gray-700/80 dark:text-neutral-300/80">
               TBLOCS AUM Growth
             </div>

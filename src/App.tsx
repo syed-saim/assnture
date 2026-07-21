@@ -9,23 +9,31 @@ import { ListingsSection } from './components/ListingsSection'
 import { StatsSection } from './components/StatsSection'
 import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
+import { ResourcesPage } from './components/ResourcesPage'
 import './index.css'
 
 function App() {
   const { theme, toggle } = useTheme()
+  const isResourcesPage = window.location.pathname.replace(/\/$/, '') === '/resources'
 
   return (
     <div className="relative isolate min-h-screen bg-white text-gray-800 antialiased dark:bg-neutral-950 dark:text-neutral-100">
       <GradientBackground />
       <Header theme={theme} onToggleTheme={toggle} />
       <main>
-        <Hero />
-        <PartnersMarquee />
-        <PlatformShowcase />
-        <SolutionsSection />
-        <ListingsSection />
-        <StatsSection />
-        <ContactSection />
+        {isResourcesPage ? (
+          <ResourcesPage />
+        ) : (
+          <>
+            <Hero />
+            <PartnersMarquee />
+            <PlatformShowcase />
+            <SolutionsSection />
+            <ListingsSection />
+            <StatsSection />
+            <ContactSection />
+          </>
+        )}
       </main>
       <Footer />
     </div>

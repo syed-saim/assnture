@@ -3,7 +3,7 @@ export function Footer() {
     <footer
       className="relative z-10 border-t border-zinc-200/70 bg-white py-12 dark:border-white/10 dark:bg-neutral-950"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <div>
           <img
             src="/logo-light.svg"

@@ -24,7 +24,7 @@ export function ListingsSection() {
       id="listings"
       className="relative z-10 py-16 md:py-32 dark:bg-neutral-950"
     >
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-300/70 bg-white/70 px-3 py-1 text-sm dark:border-white/20 dark:bg-white/10">
@@ -33,7 +33,7 @@ export function ListingsSection() {
                 Private Markets Platform
               </span>
             </div>
-            <h2 className="text-4xl font-medium text-gray-900 md:text-5xl dark:text-neutral-100">
+            <h2 className="text-3xl leading-tight font-medium text-gray-900 sm:text-4xl md:text-5xl dark:text-neutral-100">
               Capital Market Listings
             </h2>
             <p className="mt-4 text-lg text-gray-700/80 dark:text-neutral-300/80">
@@ -54,7 +54,7 @@ export function ListingsSection() {
                     key={cls}
                     type="button"
                     onClick={() => setAssetFilter(cls)}
-                    className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                    className={`min-h-9 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                       assetFilter === cls
                         ? 'border-assnture bg-assnture/10 text-assnture'
                         : 'border-zinc-300/70 text-gray-600 hover:border-zinc-400 dark:border-white/20 dark:text-neutral-400 dark:hover:border-white/40'
@@ -75,7 +75,7 @@ export function ListingsSection() {
                     key={s}
                     type="button"
                     onClick={() => setStatusFilter(s)}
-                    className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                    className={`min-h-9 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
                       statusFilter === s
                         ? 'border-assnture bg-assnture/10 text-assnture'
                         : 'border-zinc-300/70 text-gray-600 hover:border-zinc-400 dark:border-white/20 dark:text-neutral-400 dark:hover:border-white/40'

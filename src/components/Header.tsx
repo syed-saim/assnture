@@ -7,10 +7,11 @@ interface HeaderProps {
 }
 
 const navLinks = [
-  { href: '#platform', label: 'Platform' },
-  { href: '#listings', label: 'Listings' },
-  { href: '#solutions', label: 'Solutions' },
-  { href: '#about', label: 'About' },
+  { href: '/#platform', label: 'Platform' },
+  { href: '/#listings', label: 'Listings' },
+  { href: '/#solutions', label: 'Solutions' },
+  { href: '/#about', label: 'About' },
+  { href: '/resources', label: 'Resources' },
 ]
 
 export function Header({ theme, onToggleTheme }: HeaderProps) {
@@ -18,14 +19,14 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
 
   return (
     <header className="relative z-20 w-full">
-      <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-6 py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:py-5">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 py-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-6 lg:py-5">
           <div className="flex w-full items-center justify-between gap-8 lg:w-auto">
             <a href="/" className="flex items-center gap-3">
               <img
                 src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'}
                 alt="ASSNTURE"
-                className="h-8 w-auto"
+                className="h-7 w-auto sm:h-8"
               />
             </a>
 
@@ -85,7 +86,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
               {theme === 'dark' ? 'Light' : 'Dark'}
             </button>
             <a
-              href="#contact"
+              href="/#contact"
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-neutral-900 px-4 py-2 text-sm font-medium text-neutral-100 transition-colors hover:bg-neutral-700 dark:bg-assnture dark:hover:bg-assnture-hover"
             >
               Submit Enquiry
@@ -115,6 +116,15 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
                 >
                   Switch to {theme === 'dark' ? 'light' : 'dark'} mode
                 </button>
+              </li>
+              <li>
+                <a
+                  href="/#contact"
+                  className="inline-flex w-full items-center justify-center rounded-md bg-neutral-900 px-4 py-2.5 font-medium text-white dark:bg-assnture"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Submit Enquiry
+                </a>
               </li>
             </ul>
           </nav>

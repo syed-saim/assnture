@@ -5,15 +5,15 @@ export function PartnersMarquee() {
 
   return (
     <section className="relative bg-white pb-4 dark:bg-neutral-950">
-      <div className="group relative mx-auto max-w-5xl px-6">
+      <div className="group relative mx-auto max-w-5xl px-4 sm:px-6">
         <div className="flex flex-col items-center md:flex-row">
           <div className="inline md:max-w-44 md:border-r md:border-black/10 md:pr-6 dark:md:border-white/15">
-            <p className="text-end text-sm text-gray-600 dark:text-neutral-400">
+            <p className="text-center text-sm text-gray-600 md:text-end dark:text-neutral-400">
               Trusted infrastructure partners
             </p>
           </div>
-          <div className="relative overflow-hidden py-6 md:w-[calc(100%-11rem)]">
-            <div className="animate-scroll flex flex-row flex-nowrap items-center gap-x-16">
+          <div className="relative w-full overflow-hidden py-5 md:w-[calc(100%-11rem)] md:py-6">
+            <div className="animate-scroll flex flex-row flex-nowrap items-center gap-x-10 sm:gap-x-16">
               {items.map((name, i) => (
                 <div key={`${name}-${i}`} className="flex shrink-0">
                   <span className="whitespace-nowrap text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-neutral-400">

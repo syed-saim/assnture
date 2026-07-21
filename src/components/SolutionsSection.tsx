@@ -6,7 +6,7 @@ export function SolutionsSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 py-12 sm:py-16 lg:gap-16 lg:py-24">
           <div className="flex flex-col gap-6 md:flex-row">
-            <h2 className="mb-2 max-w-xl text-4xl leading-tight font-medium text-gray-800 lg:mb-8 lg:text-6xl xl:text-7xl dark:text-neutral-100">
+            <h2 className="mb-2 max-w-xl text-3xl leading-tight font-medium text-gray-800 sm:text-4xl lg:mb-8 lg:text-6xl xl:text-7xl dark:text-neutral-100">
               Smart finance solutions
             </h2>
             <p className="max-w-lg text-lg leading-relaxed text-gray-700/80 lg:mt-4 dark:text-neutral-300/80">
@@ -42,7 +42,7 @@ export function SolutionsSection() {
             {platformCards.map((card) => (
               <div
                 key={card.title}
-                className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-zinc-300/70 bg-white/70 p-6 sm:p-8 dark:border-white/10 dark:bg-neutral-950"
+                className="relative w-full max-w-sm overflow-hidden rounded-2xl border border-zinc-300/70 bg-white/70 p-5 sm:p-8 dark:border-white/10 dark:bg-neutral-950"
               >
                 <p className="relative z-10 mb-4 text-2xl font-medium text-gray-900 dark:text-neutral-100">
                   {card.title}
@@ -50,12 +50,12 @@ export function SolutionsSection() {
                 <img
                   alt=""
                   src={card.lightImg}
-                  className="mt-4 h-80 object-contain sm:h-80 dark:hidden"
+                  className="mx-auto mt-4 h-64 max-w-full object-contain sm:h-80 dark:hidden"
                 />
                 <img
                   alt=""
                   src={card.darkImg}
-                  className="relative mt-4 hidden h-80 object-contain sm:h-80 dark:block"
+                  className="relative mx-auto mt-4 hidden h-64 max-w-full object-contain sm:h-80 dark:block"
                 />
               </div>
             ))}

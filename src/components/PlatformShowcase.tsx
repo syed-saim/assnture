@@ -8,7 +8,7 @@ const dashDark =
 export function PlatformShowcase() {
   return (
     <section id="platform" className="relative z-10 w-full overflow-hidden py-16 md:py-32">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
+      <div className="mx-auto max-w-5xl space-y-8 px-4 sm:px-6 md:space-y-12">
         <div className="relative z-10 max-w-2xl">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-300/70 bg-white/70 px-3 py-1 text-sm dark:border-white/20 dark:bg-white/10">
             <span className="h-2 w-2 rounded-full bg-green-500" />
@@ -16,7 +16,7 @@ export function PlatformShowcase() {
               Digital Capital Infrastructure
             </span>
           </div>
-          <h2 className="text-4xl font-medium text-gray-900 lg:text-5xl dark:text-neutral-100">
+          <h2 className="text-3xl leading-tight font-medium text-gray-900 sm:text-4xl lg:text-5xl dark:text-neutral-100">
             Start your capital markets journey
           </h2>
           <p className="mt-6 text-lg text-gray-700/80 dark:text-neutral-300/80">
@@ -26,10 +26,10 @@ export function PlatformShowcase() {
           </p>
         </div>
 
-        <div className="relative -mx-4 rounded-3xl p-3 md:-mx-12">
+        <div className="relative -mx-2 rounded-3xl py-3 sm:-mx-4 sm:p-3 md:-mx-12">
           <div className="perspective-near">
             <div className="rotate-x-6 transform">
-              <div className="relative aspect-[88/40] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden sm:aspect-[88/40]">
                 <div
                   aria-hidden
                   className="absolute inset-0 z-10 bg-linear-to-b from-transparent from-35% to-white dark:to-neutral-950"
@@ -37,19 +37,19 @@ export function PlatformShowcase() {
                 <img
                   alt="TBLOCS dashboard"
                   src={dashLight}
-                  className="inset-0 rounded-xl px-6 dark:hidden"
+                  className="h-full w-full rounded-xl object-cover object-left px-2 sm:px-6 dark:hidden"
                 />
                 <img
                   alt="TBLOCS dashboard"
                   src={dashDark}
-                  className="hidden rounded-xl px-6 dark:block"
+                  className="hidden h-full w-full rounded-xl object-cover object-left px-2 sm:px-6 dark:block"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
+        <div className="relative mx-auto grid grid-cols-1 gap-6 min-[480px]:grid-cols-2 sm:gap-8 lg:grid-cols-4">
           {features.map((feature) => (
             <div key={feature.title} className="space-y-3">
               <div className="flex items-center gap-2">
