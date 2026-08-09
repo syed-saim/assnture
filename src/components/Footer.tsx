@@ -6,12 +6,12 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <div>
           <img
-            src="/logo-light.svg"
+            src="/logo-color-light.png"
             alt="ASSNTURE"
             className="mb-3 h-7 w-auto dark:hidden"
           />
           <img
-            src="/logo-dark.svg"
+            src="/logo-color.png"
             alt="ASSNTURE"
             className="mb-3 hidden h-7 w-auto dark:block"
           />
@@ -21,13 +21,13 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-3 sm:items-end">
           <a
-            href="mailto:info@assnture.com"
+            href="mailto:hello@assnture.com"
             className="text-sm font-medium text-gray-800 hover:text-assnture dark:text-neutral-200 dark:hover:text-assnture"
           >
-            info@assnture.com
+            hello@assnture.com
           </a>
-          <p className="text-xs text-gray-500 dark:text-neutral-500">
-            ADGM · FSRA Licensing Pending · Expected Launch Q3 2026
+          <p className="text-base text-gray-500 dark:text-neutral-500">
+            Expected Launch Q3 2026
           </p>
         </div>
       </div>

@@ -34,25 +34,7 @@ export function Hero() {
             </p>
           </motion.div>
 
-          <motion.div
-            className="flex flex-col gap-3 sm:flex-row sm:gap-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.15 }}
-          >
-            <a
-              href="#listings"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-neutral-900 px-8 py-3 font-medium text-neutral-100 transition-colors hover:bg-neutral-700 dark:bg-assnture dark:hover:bg-assnture-hover"
-            >
-              Browse Listings
-            </a>
-            <a
-              href="#platform"
-              className="inline-flex items-center justify-center rounded-md border border-zinc-300/70 bg-white/70 px-8 py-3 font-medium transition-colors hover:bg-black/5 dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/10"
-            >
-              Explore Platform
-            </a>
-          </motion.div>
+        
 
           <motion.div
             className="grid grid-cols-3 gap-3 pt-4 sm:flex sm:items-center sm:gap-8"
