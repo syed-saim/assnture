@@ -93,7 +93,7 @@ export const navigation: NavItem[] = [
       {
         label: 'Compliance',
         href: '/institutions/compliance',
-        description: 'Regulatory alignment across ADGM and Kenya frameworks',
+        description: 'Shariah-compliant architecture and AAOIFI-aligned standards',
       },
     ],
   },

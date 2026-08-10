@@ -6,6 +6,7 @@ import { Footer } from './components/Footer'
 import { HomePage } from './components/HomePage'
 import { ResourcesPage } from './components/ResourcesPage'
 import { SegmentPage } from './components/SegmentPage'
+import { CompliancePage } from './components/CompliancePage'
 import { ScrollToTop } from './components/ScrollToTop'
 import {
   AboutPage,
@@ -68,10 +69,7 @@ function App() {
               path="/institutions/infrastructure"
               element={<SegmentRoute path="/institutions/infrastructure" />}
             />
-            <Route
-              path="/institutions/compliance"
-              element={<SegmentRoute path="/institutions/compliance" />}
-            />
+            <Route path="/institutions/compliance" element={<CompliancePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
