@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import type { SegmentPage as SegmentPageData } from '../data/pages'
 import { ContactSection } from './ContactSection'
