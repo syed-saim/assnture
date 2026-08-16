@@ -24,7 +24,7 @@ export const listings: Listing[] = [
   },
   {
     id: 'ad-re-income-note',
-    tag: 'Digital Securities · ADGM',
+    tag: 'Digital Securities · UAE',
     title: 'Abu Dhabi Real Estate Income Note',
     assetClass: 'Real Estate',
     geography: 'UAE',
@@ -64,7 +64,7 @@ export const listings: Listing[] = [
   },
   {
     id: 'gulf-sukuk-note',
-    tag: 'Sukuk · ADGM',
+    tag: 'Sukuk · GCC',
     title: 'Gulf Sovereign Sukuk Note Series A',
     assetClass: 'Fixed Income',
     geography: 'GCC',

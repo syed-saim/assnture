@@ -3,15 +3,13 @@ export const partners = [
   'Black Manta Capital',
   'XRPL',
   'ADGM',
-  'FSRA',
-  'BaFin',
   'MiFID II',
   'AAOIFI',
 ]
 
 export const heroStats = [
   { value: '5', label: 'Platform Pillars' },
-  { value: '2', label: 'Global Jurisdictions' },
+  { value: '4', label: 'Core Services' },
   { value: '24/7', label: 'Settlement Layer' },
 ]
 
@@ -31,7 +29,7 @@ export const features = [
   {
     title: 'Regulated Infrastructure',
     description:
-      'Built compliance-first within the MENA region regulatory frameworks for institutional confidence.',
+      'Built compliance-first within recognised regulatory frameworks for institutional confidence.',
     icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
   },
   {

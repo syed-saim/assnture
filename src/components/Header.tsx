@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
 import type { Theme } from '../hooks/useTheme'
 import { navigation, type NavChild } from '../data/navigation'
 import GooeyNav from './GooeyNav/GooeyNav'
@@ -18,20 +17,18 @@ type TopNavItem = {
 
 function Chevron({ open }: { open: boolean }) {
   return (
-    <motion.svg
-      className="h-3.5 w-3.5"
+    <svg
+      className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
       viewBox="0 0 20 20"
       fill="currentColor"
       aria-hidden="true"
-      animate={{ rotate: open ? 180 : 0 }}
-      transition={{ duration: 0.2 }}
     >
       <path
         fillRule="evenodd"
         d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
         clipRule="evenodd"
       />
-    </motion.svg>
+    </svg>
   )
 }
 
@@ -186,153 +183,126 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
               />
             </div>
 
-            <AnimatePresence>
-              {activeChildren && (
-                <motion.div
-                  role="menu"
-                  initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                  transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute top-full left-1/2 z-50 mt-3 w-80 -translate-x-1/2 overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/95 p-2 shadow-xl shadow-zinc-950/10 backdrop-blur-md dark:border-white/10 dark:bg-neutral-950/95 dark:shadow-black/40"
-                  onMouseEnter={clearCloseTimer}
-                  onMouseLeave={scheduleClose}
-                >
-                  <ul className="flex flex-col gap-0.5">
-                    {activeChildren.map((child, index) => (
-                      <motion.li
-                        key={child.href}
-                        initial={{ opacity: 0, x: -6 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.04 + index * 0.04, duration: 0.2 }}
+            {activeChildren ? (
+              <div
+                role="menu"
+                className="absolute top-full left-1/2 z-50 mt-3 w-80 -translate-x-1/2 overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/95 p-2 shadow-xl shadow-zinc-950/10 backdrop-blur-md dark:border-white/10 dark:bg-neutral-950/95 dark:shadow-black/40"
+                onMouseEnter={clearCloseTimer}
+                onMouseLeave={scheduleClose}
+              >
+                <ul className="flex flex-col gap-0.5">
+                  {activeChildren.map((child) => (
+                    <li key={child.href}>
+                      <Link
+                        to={child.href}
+                        role="menuitem"
+                        className="group block rounded-xl px-3.5 py-3 hover:bg-zinc-100 dark:hover:bg-white/5"
+                        onClick={() => setOpenDesktop(null)}
                       >
-                        <Link
-                          to={child.href}
-                          role="menuitem"
-                          className="group block rounded-xl px-3.5 py-3 transition-colors hover:bg-zinc-100 dark:hover:bg-white/5"
-                          onClick={() => setOpenDesktop(null)}
-                        >
-                          <span className="block text-sm font-medium text-gray-900 transition-colors group-hover:text-assnture dark:text-neutral-100">
-                            {child.label}
-                          </span>
-                          <span className="mt-0.5 block text-xs leading-5 text-gray-500 dark:text-neutral-400">
-                            {child.description}
-                          </span>
-                        </Link>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                        <span className="block text-sm font-medium text-gray-900 group-hover:text-assnture dark:text-neutral-100">
+                          {child.label}
+                        </span>
+                        <span className="mt-0.5 block text-xs leading-5 text-gray-500 dark:text-neutral-400">
+                          {child.description}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
           </div>
 
           <div className="hidden items-center gap-3 lg:flex lg:justify-self-end">
             <button
               type="button"
               onClick={onToggleTheme}
-              className="inline-flex items-center justify-center rounded-md border border-zinc-300/70 bg-white/70 px-4 py-2 text-sm font-medium transition-colors hover:bg-black/5 dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-md border border-zinc-300/70 bg-white/70 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/10"
             >
               {theme === 'dark' ? 'Light' : 'Dark'}
             </button>
             <Link
               to={{ pathname: '/', hash: 'contact' }}
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-neutral-900 px-4 py-2 text-sm font-medium text-neutral-100 transition-colors hover:bg-neutral-700 dark:bg-assnture dark:hover:bg-assnture-hover"
+              className="inline-flex items-center justify-center rounded-md border border-transparent bg-neutral-900 px-4 py-2 text-sm font-medium text-neutral-100 hover:bg-neutral-700 dark:bg-assnture dark:hover:bg-assnture-hover"
             >
               Submit Enquiry
             </Link>
           </div>
         </div>
 
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="overflow-hidden border-t border-zinc-200/70 lg:hidden dark:border-white/10"
-            >
-              <ul className="flex flex-col gap-1 py-4 text-sm">
-                {topItems.map((item) =>
-                  item.children ? (
-                    <li key={item.label}>
-                      <button
-                        type="button"
-                        className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-left text-gray-800 dark:text-neutral-100"
-                        aria-expanded={openMobileGroup === item.label}
-                        onClick={() =>
-                          setOpenMobileGroup((current) =>
-                            current === item.label ? null : item.label,
-                          )
-                        }
-                      >
-                        {item.label}
-                        <Chevron open={openMobileGroup === item.label} />
-                      </button>
-                      <AnimatePresence initial={false}>
-                        {openMobileGroup === item.label && (
-                          <motion.ul
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="overflow-hidden pl-3"
-                          >
-                            {item.children.map((child) => (
-                              <li key={child.href}>
-                                <Link
-                                  to={child.href}
-                                  className="block rounded-lg px-2 py-2.5 text-gray-600 dark:text-neutral-400"
-                                  onClick={() => setMenuOpen(false)}
-                                >
-                                  <span className="block font-medium text-gray-800 dark:text-neutral-200">
-                                    {child.label}
-                                  </span>
-                                  <span className="mt-0.5 block text-xs leading-5">
-                                    {child.description}
-                                  </span>
-                                </Link>
-                              </li>
-                            ))}
-                          </motion.ul>
-                        )}
-                      </AnimatePresence>
-                    </li>
-                  ) : (
-                    <li key={item.label}>
-                      <Link
-                        to={item.href}
-                        className="block rounded-lg px-2 py-2.5 text-gray-800 dark:text-neutral-100"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ),
-                )}
-                <li>
-                  <button
-                    type="button"
-                    onClick={onToggleTheme}
-                    className="w-full rounded-lg px-2 py-2.5 text-left text-gray-700/80 dark:text-neutral-300/80"
-                  >
-                    Switch to {theme === 'dark' ? 'light' : 'dark'} mode
-                  </button>
-                </li>
-                <li className="pt-2">
-                  <Link
-                    to={{ pathname: '/', hash: 'contact' }}
-                    className="inline-flex w-full items-center justify-center rounded-md bg-neutral-900 px-4 py-2.5 font-medium text-white dark:bg-assnture"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Submit Enquiry
-                  </Link>
-                </li>
-              </ul>
-            </motion.nav>
-          )}
-        </AnimatePresence>
+        {menuOpen ? (
+          <nav className="border-t border-zinc-200/70 lg:hidden dark:border-white/10">
+            <ul className="flex flex-col gap-1 py-4 text-sm">
+              {topItems.map((item) =>
+                item.children ? (
+                  <li key={item.label}>
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-left text-gray-800 dark:text-neutral-100"
+                      aria-expanded={openMobileGroup === item.label}
+                      onClick={() =>
+                        setOpenMobileGroup((current) =>
+                          current === item.label ? null : item.label,
+                        )
+                      }
+                    >
+                      {item.label}
+                      <Chevron open={openMobileGroup === item.label} />
+                    </button>
+                    {openMobileGroup === item.label ? (
+                      <ul className="pl-3">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              to={child.href}
+                              className="block rounded-lg px-2 py-2.5 text-gray-600 dark:text-neutral-400"
+                              onClick={() => setMenuOpen(false)}
+                            >
+                              <span className="block font-medium text-gray-800 dark:text-neutral-200">
+                                {child.label}
+                              </span>
+                              <span className="mt-0.5 block text-xs leading-5">
+                                {child.description}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </li>
+                ) : (
+                  <li key={item.label}>
+                    <Link
+                      to={item.href}
+                      className="block rounded-lg px-2 py-2.5 text-gray-800 dark:text-neutral-100"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ),
+              )}
+              <li>
+                <button
+                  type="button"
+                  onClick={onToggleTheme}
+                  className="w-full rounded-lg px-2 py-2.5 text-left text-gray-700/80 dark:text-neutral-300/80"
+                >
+                  Switch to {theme === 'dark' ? 'light' : 'dark'} mode
+                </button>
+              </li>
+              <li className="pt-2">
+                <Link
+                  to={{ pathname: '/', hash: 'contact' }}
+                  className="inline-flex w-full items-center justify-center rounded-md bg-neutral-900 px-4 py-2.5 font-medium text-white dark:bg-assnture"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Submit Enquiry
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        ) : null}
       </div>
     </header>
   )

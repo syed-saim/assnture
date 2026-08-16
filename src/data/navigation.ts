@@ -33,7 +33,7 @@ export const navigation: NavItem[] = [
       {
         label: 'About',
         href: '/company/about',
-        description: 'Built for institutional scale across ADGM and Kenya',
+        description: 'Built for institutional scale in digital capital markets',
       },
     ],
   },
@@ -43,17 +43,17 @@ export const navigation: NavItem[] = [
       {
         label: 'Overview',
         href: '/investors',
-        description: 'Access tokenized private markets with institutional safeguards',
+        description: 'Institutional access to tokenized private markets',
       },
       {
         label: 'Market Access',
         href: '/investors/market-access',
-        description: 'Qualified investor pathways into digital securities',
+        description: 'Market access built for sophisticated capital',
       },
       {
         label: 'Get Started',
         href: '/investors/get-started',
-        description: 'Onboarding, eligibility and next steps',
+        description: 'Start with your mandate',
       },
     ],
   },
@@ -63,12 +63,12 @@ export const navigation: NavItem[] = [
       {
         label: 'Overview',
         href: '/asset-managers',
-        description: 'Originate, tokenize and distribute with confidence',
+        description: 'Structure, advise, issue and distribute with ASSNTURE',
       },
       {
         label: 'Digital Issuance',
         href: '/asset-managers/issuance',
-        description: 'Lifecycle automation for digital securities',
+        description: 'Issuance built for private market products',
       },
       {
         label: 'Distribution',

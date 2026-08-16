@@ -151,7 +151,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       ref={rootRef}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      className={`relative w-full h-full flex flex-wrap justify-center items-start gap-3 ${className}`}
+      className={`relative flex h-full w-full flex-wrap items-stretch justify-center gap-3 ${className}`}
       style={
         {
           '--r': `${radius}px`,
@@ -165,7 +165,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
           key={i}
           onMouseMove={handleCardMove}
           onClick={() => handleCardClick(c.url)}
-          className={`group relative flex w-[300px] flex-col overflow-hidden rounded-[20px] border-2 border-transparent transition-colors duration-300 ${
+          className={`group relative flex h-[360px] w-[300px] flex-col overflow-hidden rounded-[20px] border-2 border-transparent transition-colors duration-300 ${
             c.url ? 'cursor-pointer' : 'cursor-default'
           }`}
           style={
@@ -190,29 +190,31 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)',
             }}
           />
-          <div className="relative z-10 box-border flex-1 p-[10px]">
+          <div className="relative z-10 box-border shrink-0 p-[10px]">
             <img
               src={c.image}
               alt={c.title}
               loading="lazy"
-              className="h-[170px] w-full rounded-[10px] object-cover"
+              className="h-[160px] w-full rounded-[10px] object-cover"
             />
           </div>
-          <footer className="relative z-10 grid grid-cols-[1fr_auto] gap-x-3 gap-y-1 p-3 font-sans text-white">
-            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
-            {c.handle && (
-              <span className="text-right text-[0.85rem] opacity-80">
-                {c.handle}
-              </span>
-            )}
-            <p className="col-span-2 m-0 text-[0.85rem] leading-5 opacity-85">
+          <footer className="relative z-10 flex min-h-0 flex-1 flex-col gap-1 p-3 font-sans text-white">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="m-0 truncate text-[1.05rem] font-semibold">{c.title}</h3>
+              {c.handle ? (
+                <span className="shrink-0 text-right text-[0.85rem] opacity-80">
+                  {c.handle}
+                </span>
+              ) : null}
+            </div>
+            <p className="m-0 line-clamp-4 flex-1 text-[0.85rem] leading-5 opacity-85">
               {c.subtitle}
             </p>
-            {c.location && (
-              <span className="col-span-2 mt-1 text-[0.75rem] tracking-wide text-white/70 uppercase">
+            {c.location ? (
+              <span className="mt-auto text-[0.75rem] tracking-wide text-white/70 uppercase">
                 {c.location}
               </span>
-            )}
+            ) : null}
           </footer>
         </article>
       ))}

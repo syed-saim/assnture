@@ -27,7 +27,7 @@ export function Footer() {
             hello@assnture.com
           </a>
           <p className="text-base text-gray-500 dark:text-neutral-500">
-            Expected Launch Q3 2026
+            Expected Launch Q4 2026
           </p>
         </div>
       </div>

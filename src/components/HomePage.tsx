@@ -1,6 +1,5 @@
 import { Hero } from './Hero'
 import { PartnersMarquee } from './PartnersMarquee'
-import { ShariahCalculator } from './ShariahCalculator'
 import { RwaUseCasesSection } from './RwaUseCasesSection'
 import { MarketsSection } from './MarketsSection'
 import { StatsSection } from './StatsSection'
@@ -11,10 +10,9 @@ export function HomePage() {
     <>
       <Hero />
       <PartnersMarquee />
-      <ShariahCalculator />
-      <RwaUseCasesSection />
+     
       <MarketsSection />
-      <StatsSection />
+      <RwaUseCasesSection />
       <ContactSection />
     </>
   )

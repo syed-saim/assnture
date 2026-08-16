@@ -11,8 +11,7 @@ export function StatsSection() {
           <p className="max-w-3xl text-lg leading-relaxed text-gray-700/80 dark:text-neutral-300/80">
             ASSNTURE combines deep capital markets expertise with cutting-edge
             blockchain infrastructure — delivering regulated, scalable solutions
-            across issuance, distribution, and asset management with a presence
-            spanning ADGM and Kenya.
+            across issuance, distribution, and asset management.
           </p>
         </div>
 

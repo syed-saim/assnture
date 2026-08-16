@@ -5,6 +5,18 @@ export type SegmentPage = {
   highlights: { title: string; text: string }[]
   ctaLabel?: string
   showRwaUseCases?: boolean
+  showShariahCalculator?: boolean
+  showEngagementPath?: boolean
+  showOnboardingProcess?: boolean
+  process?: {
+    title: string
+    steps: {
+      number: string
+      title: string
+      text?: string
+      bullets?: string[]
+    }[]
+  }
 }
 
 export const segmentPages: Record<string, SegmentPage> = {
@@ -12,11 +24,12 @@ export const segmentPages: Record<string, SegmentPage> = {
     eyebrow: 'Investors',
     title: 'Institutional access to tokenized private markets',
     description:
-      'ASSNTURE connects qualified investors to digitally native securities through regulated infrastructure — with clearer settlement, stronger auditability and institutional-grade controls.',
+      'Assnture Capital provides eligible investors with regulated access to carefully structured real-world asset opportunities. Issuances are originated and structured under under regulatory regime. The local regulatoryframework is designed to deliver clear regulatory pathways while maintaining robust investor protection and operational controls.',
+    showShariahCalculator: true,
     highlights: [
       {
         title: 'Qualified access',
-        text: 'Participate in private placements designed for professional and institutional investors.',
+        text: 'Access curated private market opportunities designed for professional and institutional investors.',
       },
       {
         title: 'Transparent ownership',
@@ -24,7 +37,7 @@ export const segmentPages: Record<string, SegmentPage> = {
       },
       {
         title: 'Efficient settlement',
-        text: 'Move from traditional lag to near real-time delivery-versus-payment workflows.',
+        text: 'Benefit from near real-time settlement on compliant rails with institutional-grade controls.',
       },
     ],
   },
@@ -32,15 +45,15 @@ export const segmentPages: Record<string, SegmentPage> = {
     eyebrow: 'Investors',
     title: 'Market access built for sophisticated capital',
     description:
-      'Discover opportunities across tokenized funds, real-world assets and private market instruments — distributed through compliant digital channels.',
+      'Explore tokenized funds, real-world assets and private credit instruments distributed through controlled digital channels.',
     highlights: [
       {
         title: 'Curated opportunities',
-        text: 'Evaluate listings prepared for institutional diligence and regulated distribution.',
+        text: 'Evaluate listings prepared for institutional diligence and compliant distribution.',
       },
       {
         title: 'Cross-border reach',
-        text: 'Engage opportunities structured across ADGM and Kenya regulatory environments.',
+        text: 'Engage opportunities structured for qualified investors across multiple markets.',
       },
       {
         title: 'Portfolio flexibility',
@@ -50,13 +63,14 @@ export const segmentPages: Record<string, SegmentPage> = {
   },
   '/investors/get-started': {
     eyebrow: 'Investors',
-    title: 'Start your investor journey with ASSNTURE',
+    title: 'Start with your mandate',
     description:
-      'Share your mandate, jurisdiction and investment preferences. Our team will guide eligibility, onboarding and access to relevant opportunities.',
+      'Share your jurisdiction, investor classification and allocation preferences. We guide eligibility, onboarding and opportunity matching.',
+    showOnboardingProcess: true,
     highlights: [
       {
         title: 'Eligibility review',
-        text: 'Confirm investor classification and jurisdictional requirements before access.',
+        text: 'Confirm investor classification and requirements before access.',
       },
       {
         title: 'Secure onboarding',
@@ -64,60 +78,99 @@ export const segmentPages: Record<string, SegmentPage> = {
       },
       {
         title: 'Opportunity matching',
-        text: 'Receive introductions to listings aligned with your mandate and risk profile.',
+        text: 'Receive introductions to offerings aligned with your mandate and risk profile.',
       },
     ],
     ctaLabel: 'Begin onboarding',
   },
   '/asset-managers': {
     eyebrow: 'Asset Managers',
-    title: 'Originate, tokenize and distribute at institutional grade',
+    title: 'Originate, structure and distribute with institutional-grade rails',
     description:
-      'ASSNTURE gives asset managers a regulated path from structuring to investor distribution — with tokenization, lifecycle automation and compliant placement rails.',
+      'Assnture Capital enables asset managers to bring real-world strategies and portfolios into a regulated digital issuance and distribution framework. Through our Private Financing Platform licence, we provide a structured pathway from origination to investor allocation — using ring-fenced compartments and securitisation vehicle.',
     highlights: [
       {
-        title: 'Faster time-to-market',
-        text: 'Digitise issuance workflows without compromising legal and regulatory integrity.',
+        title: 'Structure',
+        text: 'Design the vehicle, cash-flow rights and Shariah or conventional framework so the asset is issuance-ready.',
       },
       {
-        title: 'Broader distribution',
-        text: 'Connect with qualified investors through controlled private market channels.',
+        title: 'Advise',
+        text: 'Guide regulation, investor eligibility, token economics and go-to-market sequencing.',
       },
       {
-        title: 'Lifecycle control',
-        text: 'Automate reporting, distributions and secondary transfer processes.',
+        title: 'Issue',
+        text: 'Digitise ownership on compliant rails with lifecycle controls, registers and servicing workflows.',
+      },
+      {
+        title: 'Distribute',
+        text: 'Place offerings with qualified investors through controlled private-market channels.',
       },
     ],
   },
   '/asset-managers/issuance': {
     eyebrow: 'Asset Managers',
-    title: 'Digital issuance for modern capital formation',
+    title: 'Issuance built for private market products',
     description:
-      'Structure real-world assets and funds as programmable securities with enterprise-grade issuance tooling and compliance-first design.',
+      'Tokenize funds, credit, real estate and structured instruments with clear legal mapping and operational automation.',
     highlights: [
       {
         title: 'Structured issuance',
-        text: 'Map legal rights into token representations with clear governance and controls.',
+        text: 'Map legal rights into programmable securities without losing governance clarity.',
       },
       {
         title: 'Operational automation',
-        text: 'Reduce manual servicing through smart workflows across the asset lifecycle.',
+        text: 'Automate registers, distributions and corporate actions across the asset lifecycle.',
       },
       {
         title: 'Audit-ready records',
         text: 'Maintain consistent ownership and event history for investors and stakeholders.',
       },
     ],
+    process: {
+      title: 'How Asset Managers Work with Assnture',
+      steps: [
+        {
+          number: '01',
+          title: 'Origination & Structuring',
+          text: 'You retain control of the underlying strategy and assets. Assnture works with you to define the commercial terms, investor eligibility, and structural parameters. We prepare the documentation pack and coordinate the creation of a dedicated, ring-fenced compartment within the existing multi-compartment Securitisation Special Purpose Entity (SSPE).',
+        },
+        {
+          number: '02',
+          title: 'Compartment Activation & Asset Transfer',
+          text: 'Each series sits in its own compartment under local laws. This delivers statutory limited recourse, non-petition protection and bankruptcy remoteness. True sale or equivalent risk transfer of the real-world assets into the compartment is completed before any securities are issued.',
+        },
+        {
+          number: '03',
+          title: 'Digital Issuance',
+          text: 'Securities are issued at compartment level. Where tokenisation is used, tokens represent claims against the specific compartment — they do not confer direct legal title to the underlying assets. Token parameters, transfer restrictions and investor eligibility rules are configured on the Optimus platform under dual-control governance.',
+        },
+        {
+          number: '04',
+          title: 'Distribution',
+         bullets: [
+            'Investors are onboarded under Assnture’s regulatory perimeter complying with local regulator laws.',
+            'This dual-channel approach gives asset managers access to qualified investor bases without the need to establish a new SPV for each transaction.',
+
+          ],
+        },
+        {
+          number: '05',
+          title: 'Ongoing Lifecycle',
+          text: 'Investor reporting, corporate actions, transfers (subject to whitelist and restrictions), and compartment-level servicing run through the Optimus platform, with legal-entity reporting obligations remaining with the SSPE operator.',
+        },
+      ],
+    },
   },
   '/asset-managers/distribution': {
     eyebrow: 'Asset Managers',
-    title: 'Compliant distribution for private market products',
+    title: 'Reach qualified capital through compliant channels',
     description:
-      'Place digital securities with the right investor base through regulated infrastructure built for private markets and institutional diligence.',
+      'ASSNTURE connects your offering to eligible investors with controlled visibility, onboarding and settlement workflows.',
+    showEngagementPath: true,
     highlights: [
       {
         title: 'Targeted placement',
-        text: 'Reach qualified capital with controlled visibility and eligibility gates.',
+        text: 'Reach professional and institutional investors with controlled visibility and eligibility gates.',
       },
       {
         title: 'Investor readiness',
@@ -174,7 +227,7 @@ export const segmentPages: Record<string, SegmentPage> = {
     eyebrow: 'Institutions',
     title: 'Compliance-first digital markets',
     description:
-      'Operate within ADGM and Kenya regulatory frameworks with processes designed for institutional oversight, transparency and controlled access.',
+      'Operate with processes designed for institutional oversight, transparency and controlled access across digital capital markets workflows.',
     highlights: [
       {
         title: 'Regulatory alignment',
