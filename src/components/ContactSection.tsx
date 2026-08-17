@@ -24,12 +24,12 @@ export function ContactSection() {
                 href="mailto:hello@assnture.com"
                 className="mt-10 text-sm font-medium text-gray-800 transition-colors hover:text-assnture dark:text-neutral-200 dark:hover:text-assnture"
               >
-                info@assnture.com
+                hello@assnture.com
               </a>
             </div>
 
             <form
-              action="mailto:info@assnture.com"
+              action="mailto:hello@assnture.com"
               method="post"
               encType="text/plain"
               className="grid gap-5 p-7 sm:grid-cols-2 sm:p-10 lg:p-12"
