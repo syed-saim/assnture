@@ -21,7 +21,7 @@ export function ContactSection() {
               </div>
 
               <a
-                href="mailto:info@assnture.com"
+                href="mailto:hello@assnture.com"
                 className="mt-10 text-sm font-medium text-gray-800 transition-colors hover:text-assnture dark:text-neutral-200 dark:hover:text-assnture"
               >
                 info@assnture.com
