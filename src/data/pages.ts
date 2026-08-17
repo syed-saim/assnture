@@ -142,16 +142,12 @@ export const segmentPages: Record<string, SegmentPage> = {
         {
           number: '03',
           title: 'Digital Issuance',
-          text: 'Securities are issued at compartment level. Where tokenisation is used, tokens represent claims against the specific compartment — they do not confer direct legal title to the underlying assets. Token parameters, transfer restrictions and investor eligibility rules are configured on the Optimus platform under dual-control governance.',
+          text: 'Securities are issued at compartment level. Where tokenisation is used, tokens represent claims against the specific compartment they do not confer direct legal title to the underlying assets. Token parameters, transfer restrictions and investor eligibility rules are configured on the Optimus platform under dual-control governance.',
         },
         {
           number: '04',
           title: 'Distribution',
-         bullets: [
-            'Investors are onboarded under Assnture’s regulatory perimeter complying with local regulator laws.',
-            'This dual-channel approach gives asset managers access to qualified investor bases without the need to establish a new SPV for each transaction.',
-
-          ],
+         text: 'Investors are onboarded under Assnture’s regulatory perimeter complying with local regulatory frameworks. This dual-channel approach gives asset managers access to qualified investor bases without the need to establish a new SPV for each transaction.',
         },
         {
           number: '05',
