@@ -119,9 +119,9 @@ export function SegmentPage({ page }: SegmentPageProps) {
         </section>
       ) : null}
 
-      {page.showShariahCalculator ? <ShariahCalculator /> : null}
       {page.showEngagementPath ? <EngagementPathSection /> : null}
       {page.showOnboardingProcess ? <OnboardingSubscriptionSection /> : null}
+      {page.showShariahCalculator ? <ShariahCalculator /> : null}
       {page.showRwaUseCases ? <RwaUseCasesSection /> : null}
 
       <ContactSection />

@@ -24,13 +24,10 @@ export function Footer() {
             href="mailto:hello@assnture.com"
             className="text-sm font-medium text-gray-800 hover:text-assnture dark:text-neutral-200 dark:hover:text-assnture"
           >
-            hello@assnture.com
+            <h1>hello@assnture.com</h1>
           </a>
-          <p className="text-base text-gray-500 dark:text-neutral-500">
-            Expected Launch Q4 2026
-          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

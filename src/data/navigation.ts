@@ -35,6 +35,11 @@ export const navigation: NavItem[] = [
         href: '/company/about',
         description: 'Built for institutional scale in digital capital markets',
       },
+      {
+        label: 'Compliance',
+        href: '/company/compliance',
+        description: 'Shariah-compliant architecture and AAOIFI-aligned standards',
+      },
     ],
   },
   {
@@ -89,11 +94,6 @@ export const navigation: NavItem[] = [
         label: 'Infrastructure',
         href: '/institutions/infrastructure',
         description: 'Settlement, custody-ready workflows and interoperability',
-      },
-      {
-        label: 'Compliance',
-        href: '/institutions/compliance',
-        description: 'Shariah-compliant architecture and AAOIFI-aligned standards',
       },
     ],
   },

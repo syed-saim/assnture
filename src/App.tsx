@@ -40,6 +40,11 @@ function App() {
             <Route path="/company/listings" element={<ListingsPage />} />
             <Route path="/company/solutions" element={<SolutionsPage />} />
             <Route path="/company/about" element={<AboutPage />} />
+            <Route path="/company/compliance" element={<CompliancePage />} />
+            <Route
+              path="/institutions/compliance"
+              element={<Navigate to="/company/compliance" replace />}
+            />
             <Route path="/investors" element={<SegmentRoute path="/investors" />} />
             <Route
               path="/investors/market-access"
@@ -69,7 +74,6 @@ function App() {
               path="/institutions/infrastructure"
               element={<SegmentRoute path="/institutions/infrastructure" />}
             />
-            <Route path="/institutions/compliance" element={<CompliancePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

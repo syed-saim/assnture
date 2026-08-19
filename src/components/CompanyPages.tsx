@@ -1,4 +1,3 @@
-import { ShariahCalculator } from './ShariahCalculator'
 import { SolutionsSection } from './SolutionsSection'
 import { ListingsSection } from './ListingsSection'
 import { StatsSection } from './StatsSection'
@@ -37,7 +36,16 @@ export function PlatformPage() {
         title="Digital capital markets infrastructure"
         description="Regulated tokenization, private placement distribution and on-chain settlement — from origination through liquidity management."
       />
-      <ShariahCalculator />
+      <section className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="max-w-3xl rounded-3xl border border-zinc-200/80 bg-white/80 p-8 sm:p-10 dark:border-white/10 dark:bg-white/[0.03]">
+          <p className="text-lg leading-relaxed text-gray-600 dark:text-neutral-300/80">
+            Assnture leverages institutional-grade tokenisation engines and
+            regulated marketplaces to accelerate the structuring, issuance and
+            secondary distribution of real-world asset (RWA) tokens within a
+            fully compliant regulatory framework.
+          </p>
+        </div>
+      </section>
       <PartnersMarquee />
       <ContactSection />
     </>
@@ -63,8 +71,8 @@ export function SolutionsPage() {
     <>
       <PageIntro
         eyebrow="Company · Solutions"
-        title="Capital markets solutions"
-        description="ASSNTURE helps institutions arrange, advise, issue and distribute tokenized financial instruments across regulated digital rails."
+        title="How ASSNTURE arranges, advises, issues and distributes"
+        description="From structuring through placement, ASSNTURE supports the full journey of bringing capital markets activity on-chain — with regulatory alignment at every step."
       />
       <SolutionsSection />
       <ContactSection />

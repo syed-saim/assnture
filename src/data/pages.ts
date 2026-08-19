@@ -25,7 +25,6 @@ export const segmentPages: Record<string, SegmentPage> = {
     title: 'Institutional access to tokenized private markets',
     description:
       'Assnture Capital provides eligible investors with regulated access to carefully structured real-world asset opportunities. Issuances are originated and structured under under regulatory regime. The local regulatoryframework is designed to deliver clear regulatory pathways while maintaining robust investor protection and operational controls.',
-    showShariahCalculator: true,
     highlights: [
       {
         title: 'Qualified access',
@@ -66,6 +65,7 @@ export const segmentPages: Record<string, SegmentPage> = {
     title: 'Start with your mandate',
     description:
       'Share your jurisdiction, investor classification and allocation preferences. We guide eligibility, onboarding and opportunity matching.',
+    showShariahCalculator: true,
     showOnboardingProcess: true,
     highlights: [
       {
@@ -219,8 +219,8 @@ export const segmentPages: Record<string, SegmentPage> = {
       },
     ],
   },
-  '/institutions/compliance': {
-    eyebrow: 'Institutions',
+  '/company/compliance': {
+    eyebrow: 'Company',
     title: 'Compliance-first digital markets',
     description:
       'Operate with processes designed for institutional oversight, transparency and controlled access across digital capital markets workflows.',
