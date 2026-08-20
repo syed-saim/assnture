@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-ssr
+.git
+.gitignore
+.vscode
+.idea
+*.log
+.env
+.env.*
+*.local
+README.md
+vercel.json
+Dockerfile
+.dockerignore

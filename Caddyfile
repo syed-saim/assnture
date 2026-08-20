@@ -1,0 +1,46 @@
+# global options
+{
+	admin off # theres no need for the admin api in railway's environment
+	persist_config off # storage isn't persistent anyway
+	auto_https off # railway handles https for us, this would cause issues if left enabled
+	# runtime logs
+	log {
+		format json # set runtime log format to json mode
+	}
+	# server options
+	servers {
+		trusted_proxies static private_ranges 100.0.0.0/8 # trust railway's proxy
+	}
+}
+
+# site block, listens on the $PORT environment variable, automatically assigned by railway
+:{$PORT:3000} {
+	# access logs
+	log {
+		format json # set access log format to json mode
+	}
+
+	# serve from the 'dist' folder (Vite builds into the 'dist' folder)
+	root * dist
+
+	# enable compression
+	encode zstd gzip
+
+	# health check for railway (set the service's Healthcheck Path to /health)
+	handle /health {
+		respond "OK" 200
+	}
+
+	# hashed build assets can be cached forever
+	handle /assets/* {
+		header Cache-Control "public, max-age=31536000, immutable"
+		file_server
+	}
+
+	# everything else: serve the file, else index.html for client side routing
+	handle {
+		header Cache-Control "no-cache"
+		try_files {path} /index.html
+		file_server
+	}
+}
